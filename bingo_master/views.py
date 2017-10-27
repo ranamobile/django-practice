@@ -13,7 +13,8 @@ def list(request):
 
 
 def game(request):
-    return render(request, "game.html")
+    cards = dict.fromkeys(range(1, 76), False)
+    return render(request, "game.html", {"cards": cards})
 
 
 def history(request):

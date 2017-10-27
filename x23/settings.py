@@ -21,8 +21,6 @@ ALLOWED_HOSTS = [
 # Application definition
 
 INSTALLED_APPS = [
-    "bootstrap3",
-    "x24.apps.X24Config",
     "bingo_master.apps.BingoMasterConfig",
     "django.contrib.admin",
     "django.contrib.auth",
@@ -61,6 +59,11 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = "x23.wsgi.application"
+
+STATIC_URL = "/static/"
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static"),
+]
 
 
 # Database

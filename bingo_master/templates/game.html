@@ -1,20 +1,7 @@
-{# Load the tag library #}
-{% load bootstrap3 %}
+{% include "base.html" %}
 
-{# Load CSS and JavaScript #}
-{% bootstrap_css %}
-{% bootstrap_javascript %}
-
-{# Display django.contrib.messages as Bootstrap alerts #}
-{% bootstrap_messages %}
-
-<div class="container">
-    <h1>{% block title %}(no title){% endblock %}</h1>
-
-    <p>Soethingsldkfj
-    </p>
-
-    {% autoescape off %}{% bootstrap_messages %}{% endautoescape %}
-
-    {% block content %}(no content){% endblock %}
+<div class="container-fluid">
+{% for card, status in cards.items %}
+  <div class="container"><span class="badge badge-{% if status %}success{% else %}secondary{% endif %}">{{ card }}</span></div>
+{% endfor %}
 </div>
